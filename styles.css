@@ -1,127 +1,153 @@
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Delius+Swash+Caps&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Pacifico&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap");
-
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Delius+Swash+Caps&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap");
-
+/* General Styles */
 * {
-  box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-header,
-footer {
-  /* border: solid 2px red; */
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 1rem 1.5rem;
-  background-color: aquamarine;
+  align-items: center;
+  background: linear-gradient(90deg, #0db2c1, #0d89c1);
+  padding: 1rem 2rem;
+  color: white;
 }
 
-header h2 {
-  font-size: 2rem;
-  font-family: "Pacifico", cursive;
-}
-
-/* .nav-end {
-    display: flex;
-    border: solid 2px red;
-    width: 75%;
-    justify-content: space-between;
-} */
-
-nav ul {
-  list-style: none;
-  /* border: solid 2px red; */
+.nav-links {
   display: flex;
-  justify-content: space-around;
+  list-style: none;
   gap: 1.5rem;
 }
 
-nav a {
+.nav-links a {
   text-decoration: none;
-  color: black;
-  font-size: 1.15rem;
+  color: white;
+  font-weight: 500;
 }
 
-section {
-  padding: 30px;
-  text-align: center;
+.nav-links a:hover {
+  text-decoration: underline;
 }
 
-#hero {
-  background-image: url("https://picsum.photos/200/300?random=15");
-  background-color: darkgray;
-  min-height: 300px;
+/* Hero Section */
+.hero {
+  background: url("https://picsum.photos/1920/800?random=1") no-repeat center
+    center/cover;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: white;
+  text-align: center;
 }
 
 .hero-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: "Sour Gummy", serif;
-  text-align: center;
-  gap: 1rem;
-  justify-content: center;
-  background-color: rgba(255, 255, 255, 0.7);
-  padding: 30px;
-  max-width: 85char;
-  width: 50%;
-  border: solid 2px red;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 2rem;
+  border-radius: 8px;
 }
 
-.call-to-action-btn {
-  /* margin-top: 3rem; */
-  background-color: violet;
-  padding: 10px 20px;
-  border-radius: 5px;
-  /* width: min-content; */
+.cta-btn {
   display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  color: white;
+  background: #0db2c1;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
 }
 
-#services {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
+.cta-btn:hover {
+  background: #0d89c1;
+}
+
+/* Services Section */
+.services {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: #fff;
 }
 
 .services-container {
   display: flex;
   gap: 2rem;
-  flex-direction: column;
+  justify-content: center;
 }
 
 .service {
+  background: #f4f4f4;
+  padding: 1.5rem;
+  border-radius: 8px;
+  flex: 1;
   text-align: center;
-  padding: 1rem;
-  background-color: #f4f4f4;
-  border-radius: 10px;
+}
+
+/* Gallery Section */
+.gallery {
+  padding: 4rem 2rem;
 }
 
 .gallery-container {
   display: grid;
-  /* These both achieve the same result */
-  grid-template-columns: 1fr;
-  /* grid-template-columns: 1fr 1fr 1fr; */
-  /* grid-template-columns: repeat(3, 1fr); */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1rem;
 }
 
 .gallery-container img {
   width: 100%;
-  height: 100%;
   border-radius: 8px;
 }
 
-@media (min-width: 600px) {
+/* Testimonials Section */
+.testimonials {
+  background: #0d89c1;
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.testimonials-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.testimonial {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+/* Footer */
+.footer {
+  background: #333;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+.footer a {
+  color: #0db2c1;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .services-container {
-    flex-direction: row;
-  }
-  .gallery-container {
-    grid-template-columns: repeat(3, 1fr);
+    flex-direction: column;
   }
 }
